@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { PromptContainerFullLineBottomActionsBlock } from '@vibing-ai/block-kit';
+import { PromptContainerFullLineBottomActionsBlock } from '@/blocks/prompt/PromptContainerFullLineBottomActionsBlock';
 import { createElement, useState } from 'react';
 
 const meta: Meta<typeof PromptContainerFullLineBottomActionsBlock> = {
@@ -18,6 +18,7 @@ type Story = StoryObj<typeof PromptContainerFullLineBottomActionsBlock>;
 
 export const Default: Story = {
   args: {
+    id: 'prompt-block-default',
     value: 'This is a prompt block',
     placeholder: 'Enter a prompt here',
     onSubmit: msg => alert(`Submitted: ${msg}`),
@@ -27,6 +28,7 @@ export const Default: Story = {
 
 export const Disabled: Story = {
   args: {
+    id: 'prompt-block-disabled',
     value: 'This is disabled prompt block',
     disabled: true,
   },
@@ -34,6 +36,7 @@ export const Disabled: Story = {
 
 export const customActionButton: Story = {
   args: {
+    id: 'prompt-block-customActionButton',
     value: 'This is custom action prompt block',
     onSubmit: msg => alert(`Submitted: ${msg}`),
     disabled: false,
@@ -49,6 +52,7 @@ export const customActionButton: Story = {
 
 export const AutoResizing = {
   render: args => {
+    id: 'prompt-block-autoResizing';
     const [value, setValue] = useState('');
 
     return createElement(PromptContainerFullLineBottomActionsBlock, {

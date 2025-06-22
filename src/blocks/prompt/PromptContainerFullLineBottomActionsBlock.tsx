@@ -29,6 +29,7 @@ export interface PromptContainerFullLineBottomActionsBlockProps extends BlockPro
 export const PromptContainerFullLineBottomActionsBlock: React.FC<
   PromptContainerFullLineBottomActionsBlockProps
 > = ({
+  id,
   onSubmit,
   value = '',
   onChange,
@@ -64,10 +65,7 @@ export const PromptContainerFullLineBottomActionsBlock: React.FC<
   };
 
   return (
-    <div
-      className="w-full relative border rounded-md bg-white"
-      data-block-id="prompt-container-full-line-bottom-actions"
-    >
+    <div className="w-full relative border rounded-md bg-white" data-block-id={id}>
       <Textarea
         ref={textareaRef}
         value={value}
@@ -93,7 +91,7 @@ export const PromptContainerFullLineBottomActionsBlock: React.FC<
             <Button
               type="button"
               aria-label="Attach file"
-              className="absolute bottom-2 left-2 flex items-center justify-center text-gray-500"
+              className="absolute bottom-6 left-2 flex items-center justify-center text-gray-500"
             >
               <Paperclip />
             </Button>
